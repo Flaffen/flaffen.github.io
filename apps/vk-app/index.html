@@ -13,7 +13,7 @@
 		<script>
 			VK.init(function(){}, function(){}, '5.53');
 
-			VK.api("friends.get", {fields: "name,city"}, function(data) {
+			VK.api("friends.get", {fields: "name,city,photo_100"}, function(data) {
 				for (var i = 0; i < data.response.items.length; i++) {
 				  console.log(data.response.items[i]);
 				}
