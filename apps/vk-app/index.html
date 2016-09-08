@@ -11,13 +11,11 @@
 	</head>
 	<body>
 		<script>
-			VK.init(function(){});
+			VK.init(function(){}, function(){}, '5.53');
 
-			function doIt() {
-				VK.api("friends.get", function(data) {
-					alert(data);
-				});
-			}
+			VK.api("friends.get", function(data) {
+				alert(data);
+			});
 		</script>
 	</body>
 </html>
