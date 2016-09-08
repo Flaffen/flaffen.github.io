@@ -15,7 +15,7 @@
 
 			VK.api("friends.get", {fields: "name"}, function(data) {
 				console.log(data);
-				console.log(data['response'][1]);
+				console.log(data.items[0]);
 			});
 		</script>
 	</body>
