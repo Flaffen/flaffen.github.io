@@ -15,6 +15,10 @@
 
 			VK.api("friends.get", {fields: "name,city"}, function(data) {
 			  console.log(data.response.items[0]);
+			  
+			  for (var i = 0; i <= data.response.items.lenght; i++) {
+			  	console.log(data.response.items[i]);
+			  }
 			});
 		</script>
 	</body>
