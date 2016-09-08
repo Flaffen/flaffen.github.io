@@ -7,10 +7,17 @@
 
 		<script src="https://flaffen.github.io/bower_components/jquery/dist/jquery.min.js"></script>
 		<script src="https://flaffen.github.io/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+		<script src="//vk.com/js/api/xd_connection.js?2"></script>
 	</head>
 	<body>
-		<p>Hello, VK APP!</p>
+		<script>
+			VK.init(function(){});
 
-		<button class="btn btn-success">Hello, World</button>
+			function doIt() {
+				VK.api("friends.get", function(data) {
+					alert(data);
+				});
+			}
+		</script>
 	</body>
 </html>
