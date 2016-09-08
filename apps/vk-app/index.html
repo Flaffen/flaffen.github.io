@@ -14,7 +14,7 @@
 			VK.init(function(){}, function(){}, '5.53');
 
 			VK.api("friends.get", {fields: "name,city,photo_100"}, function(data) {
-				for (var i = 0; i < data.response.items.length; i++) {
+				for (var i = 0; i < data.response.length; i++) {
 				  console.log(data.response.items[i]);
 				  $("body").append('<img src="' + data.response.items[i].photo_100 + '">');
 				}
