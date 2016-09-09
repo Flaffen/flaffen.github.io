@@ -10,10 +10,11 @@
 		<script src="//vk.com/js/api/xd_connection.js?2"></script>
 		
 		<style>
-		  .blur {
+		  #container {
 		    background-image: url("https://flaffen.github.io/apps/vk-app/society-background.jpg");
-		    background-repeat: no-repeat;
-		    filter: blur(1px);
+		    background-position: center;
+		    width: 827px;
+		    height: 500px;
 		  }
 		</style>
 	</head>
@@ -21,9 +22,8 @@
 		<script>
 			VK.init(function(){}, function(){}, '5.53');
 		</script>
-		<div class="blur">
-			Hello
+		<div id="container">
+		  <p>Hello, World</p>
 		</div>
-		<p style="text-align: center;">Hello, World!</p>
 	</body>
 </html>
