@@ -10,25 +10,16 @@
 		<script src="//vk.com/js/api/xd_connection.js?2"></script>
 		
 		<style>
-		  body {
-		    color: #fff;
+		  .blur {
+		    background-image: url("https://flaffen.github.io/apps/vk-app/society-background.jpg");
+		    background-repeat: no-repeat;
+		    filter: blur(1px);
 		  }
-		
-			.blur {
-				filter: blur(1px);
-			}
 		</style>
 	</head>
 	<body>
 		<script>
 			VK.init(function(){}, function(){}, '5.53');
-
-			VK.api("friends.get", {fields: "name,city,photo_100"}, function(data) {
-				for (var i = 0; i < data.response.length; i++) {
-				  console.log(data.response.items[i]);
-				  $("body").append('<img src="' + data.response.items[i].photo_100 + '">');
-				}
-			});
 		</script>
 		<div class="blur">
 			<img src="https://flaffen.github.io/apps/vk-app/society-background.jpg" width="827", height="500">
