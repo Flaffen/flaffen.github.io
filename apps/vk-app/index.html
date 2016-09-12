@@ -185,5 +185,14 @@
 			<a href="#" class="btn button-text">Загрузить фотографию</a>
 		</div>
 	</div>
+	
+	<script src="https://vk.com/js/api/xd_connection.js?2"></script>
+	<script>
+	  VK.init(function(){}, '5.53');
+	  
+	  VK.api('photos.getUploadServer', function(data) {
+	    console.log(data);
+	  });
+	</script>
 </body>
 </html>
