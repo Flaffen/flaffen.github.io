@@ -1,29 +1,171 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<title>Hello, World</title>
-		<link rel="stylesheet" href="https://flaffen.github.io/bower_components/bootstrap/dist/css/bootstrap.min.css">
+<head>
+	<meta charset="UTF-8">
+	<title>Форум активных граждан "Сообщество"</title>
+	<link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 
-		<script src="https://flaffen.github.io/bower_components/jquery/dist/jquery.min.js"></script>
-		<script src="https://flaffen.github.io/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
-		<script src="//vk.com/js/api/xd_connection.js?2"></script>
-		
-		<style>
-		  #container {
-		    background-image: url("https://flaffen.github.io/apps/vk-app/society-background.jpg");
-		    background-position: center;
-		    width: 827px;
-		    height: 500px;
-		  }
-		</style>
-	</head>
-	<body>
-		<script>
-			VK.init(function(){}, function(){}, '5.53');
-		</script>
-		<div id="container">
-		  <p>Hello, World</p>
+	<style>
+		body {
+			font-family: 'Open Sans';
+		}
+
+		#wrap {
+			position: relative;
+			background-image: url("society-background1.jpg");
+			background-repeat: no-repeat;
+			width: 970px;
+			height: 1000px;
+		}
+
+		.photo-chooser {
+			width: 325px;
+			height: 200;
+			margin-left: 25%;
+			margin-top: 30%;
+			margin-left: 15%;
+			background-color: red;
+			position: absolute;
+		}
+
+		.choose {
+			width: 150px;
+			height: 100px;
+			background: green;
+			display: inline-block;
+			margin: 5px;
+		}
+
+		.avatar {
+			position: absolute;
+			height: 250px;
+			width: 200px;
+			background: red;
+			right: 0;
+			margin-top: 29%;
+			margin-right: 20%;
+		}
+
+		/*.btn {
+			position: absolute;
+			bottom: 0;
+			width: 100%;
+			border: none;
+			padding: 10px;
+			cursor: pointer;
+			-webkit-box-shadow: inset 0px -6px 0px -2px rgba(12,45,135,1);
+			-moz-box-shadow: inset 0px -6px 0px -2px rgba(12,45,135,1);
+			box-shadow: inset 0px -6px 0px -2px rgba(12,45,135,1);
+			background: #4288CC;
+			color: #fff;
+			transition: all .2s ease-in-out;
+		}*/
+
+		.btn {
+			position: absolute;
+			background: #4288CC;
+		  color: white;
+		  font-size: 22px;
+		  height: 58px;
+		  width: 200px;
+		  margin: 130% 0 0 0px;
+		  overflow: hidden;
+		  display: block;
+		  text-align: center;
+		  line-height: 58px;
+			text-decoration: none;
+		  border-radius: 2px;
+		  transition: all .2s ease-in-out;
+
+
+		  /*Тень*/
+		  /*-webkit-box-shadow: 0px 6px 0px rgba(0, 0, 0, 0.8);
+		  -moz-box-shadow: 0px 6px 0px rgba(0, 0, 0, 0.8);
+		  box-shadow: 0px 6px 0px rgba(0, 0, 0, 0.8);*/
+
+		  -webkit-box-shadow: inset 0px -6px 0px -2px rgba(12,45,135,1);
+			-moz-box-shadow: inset 0px -6px 0px -2px rgba(12,45,135,1);
+			box-shadow: inset 0px -6px 0px -2px rgba(12,45,135,1);
+
+		  /*Градиент*/
+		  /*background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+		  background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+		  background-image: -o-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+		  background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));
+		  background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.2));*/
+		}
+
+		.btn:hover {
+			background-color: #4288FF;
+			transition: all .2s ease-in-out;
+		}
+
+		.btn:active {
+			background-color: #4288FF;
+			margin-top: 131%;
+			-webkit-box-shadow: inset 0px 4px 0px -4px rgba(12,45,135,1);
+			-moz-box-shadow: inset 0px 4px 0px -4px rgba(12,45,135,1);
+			box-shadow: inset 0px 4px 0px -4px rgba(12,45,135,1);
+		  /*-webkit-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.8);
+		  -moz-box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.8);
+		  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.8);*/
+		}
+
+		#about {
+			position: absolute;
+			top: 0;
+			background: rgba(0, 0, 0, 0.3);
+			height: 155px;
+			width: 100%;
+			font-size: 18px;
+		}
+
+		#about p {
+			position: absolute;
+			right: 15px;
+			top: 30%;
+			color: #fff;
+		}
+
+		#about a {
+			padding-right: 5px;
+		}
+
+		a {
+			text-decoration: none;
+			border-bottom: 1px solid #fff transparent;
+			color: white;
+		}
+
+		a:hover {
+			border-color: #fff;
+
+			transition: all .2s ease-in-out;
+		}
+	</style>
+</head>
+<body>
+	<div id="wrap">
+		<div id="about">
+			<p>
+				<a href="#"><i class="fa fa-2x fa-question-circle"></i> Что такое "Сообщество"?</a>
+				<br>
+				<a href="#"><i class="fa fa-2x fa-vk"></i> Группа "Сообщество" ВКонтакте</a>
+			</p>
 		</div>
-	</body>
+
+		<div class="photo-chooser">
+			<div class="choose"></div>
+			<div class="choose"></div>
+			<br>
+			<div class="choose"></div>
+			<div class="choose"></div>
+		</div>
+
+		<div class="avatar">
+			<a href="#" class="btn button-text">Загрузить фотографию</a>
+		</div>
+	</div>
+</body>
 </html>
